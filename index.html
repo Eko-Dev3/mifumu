@@ -524,14 +524,39 @@
             lucide.createIcons();
         }
 
+        /**
+         * Checkout mejorado para WhatsApp.
+         * Después de abrir el enlace, vacía el carrito y lo cierra.
+         */
         function checkoutWhatsApp() {
             if (cart.length === 0) return;
             const phone = "240222186398";
-            let message = `*MIFUMU COSMETIC - NUEVO PEDIDO*\n\n`;
-            cart.forEach(item => { message += `• ${item.name[currentLang]} x${item.qty} - ${formatPrice(item.price * item.qty)}\n`; });
+            
+            let message = `✨ *MIFUMU COSMETIC - NUEVO PEDIDO* ✨\n\n`;
+            
+            cart.forEach(item => { 
+                message += `🛍️ *${item.name[currentLang]}*\n`;
+                message += `   Cantidad: ${item.qty}\n`;
+                message += `   Subtotal: ${formatPrice(item.price * item.qty)}\n`;
+                message += `   🖼️ Foto: ${item.img}\n\n`;
+            });
+            
             const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
-            message += `\n*TOTAL ESTIMADO: ${formatPrice(total)}*\n\n_Hola, me gustaría confirmar mi pedido._`;
+            message += `----------------------------\n`;
+            message += `💰 *TOTAL A PAGAR: ${formatPrice(total)}*\n`;
+            message += `----------------------------\n\n`;
+            message += `👋 Hola, me gustaría confirmar la disponibilidad de estos productos.`;
+            
+            // Abrir WhatsApp en nueva pestaña
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+
+            // --- ACCIONES POST-PEDIDO ---
+            // 1. Vaciar el array del carrito
+            cart = [];
+            // 2. Refrescar la interfaz del carrito
+            renderCart();
+            // 3. Cerrar el sidebar
+            toggleCart();
         }
 
         window.onload = () => { renderProducts(); lucide.createIcons(); };
