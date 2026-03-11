@@ -1,933 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Ashion Template">
-    <meta name="keywords" content="Ashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MIFUMU | COSMETIC</title>
-
-    <!--  -->
-
-    <link rel="icon" href="img/logotipo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Mifumu Cosmetic | Belleza Natural</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .hero-gradient { background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .product-card:hover .cart-btn { transform: translateY(0); opacity: 1; }
+        
+        /* Onboarding Styles */
+        #onboarding {
+            transition: transform 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+        .onboarding-exit { transform: translateY(-100%); }
+    </style>
 </head>
+<body class="bg-white text-slate-900">
 
-<body>
+    <!-- ONBOARDING OVERLAY -->
+    <div id="onboarding" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center p-6 text-center">
+        <div class="max-w-xl w-full space-y-12">
+            <!-- Logo Animado -->
+            <div class="space-y-4">
+                <h1 class="text-5xl font-black italic text-orange-600 tracking-tighter animate-pulse">MIFUMU</h1>
+                <p class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px] lang-text" data-es="Bienvenido a la belleza natural" data-fr="Bienvenue à la beauté naturelle">Bienvenido a la belleza natural</p>
+            </div>
 
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalLabellog" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabellog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section class="discount">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 p-0">
-                                    <div class="login-form" style="">
-                                        <form>
-                                            <h1>Registrese o inicie sesion</h1>
-                                            <div class="imgcontainer">
-                                                <img src="https://img1.freepng.fr/20180331/ffe/kisspng-computer-icons-user-clip-art-user-5abf13dad7aed4.5909364715224718988835.jpg" alt="Avatar" class="avatar">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" name="email" placeholder="E-mail Address">
-                                                <span class="input-icon"><i class="fa fa-envelope"></i></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="psw" placeholder="Password">
-                                                <span class="input-icon"><i class="fa fa-lock"></i></span>
-                                            </div>
-
-                                            <button class="login-btn">iniciar</button>
-                                            <p class="text-danger">No tienes una cuenta? <a class="text-primary" href="./registrarse.html">Crea una</a></p>
-                                            <br>
-
-                                            <a class="reset-psw" href="#">Olvidaste de tu contraseña ?</a>
-                                            <div class="seperator"><b>o</b></div>
-                                            <p>Inicie sesión con su cuenta de redes sociales
-
-                                            </p>
-                                            <!-- Social login buttons -->
-                                            <div class="social-icon">
-                                                <button type="button"><i class="fa fa-twitter"></i></button>
-                                                <button type="button"><i class="fa fa-facebook"></i></button>
-                                                <button type="button"><i class='fa fa-google'></i></button>
-                                            </div>
-                                        </form>
-
-                                    </div>
-                                    <a href="">
-                                        <p class="text-primary fa fa-lock"> Privacidad de tus datos</p>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
+            <!-- Card de Selección (Estilo Hero) -->
+            <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 shadow-2xl shadow-orange-100 space-y-8">
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-black tracking-tighter lang-text" data-es="Personaliza tu experiencia" data-fr="Personnalisez votre expérience">Personaliza tu experiencia</h2>
+                    <p class="text-slate-500 text-sm lang-text" data-es="Elige tu idioma y moneda preferida" data-fr="Choisissez votre langue et votre devise préférées">Elige tu idioma y moneda preferida</p>
                 </div>
 
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2 text-left">
+                        <label class="text-[9px] font-black uppercase text-slate-400 ml-2">Language</label>
+                        <select onchange="changeLang(this.value)" class="w-full bg-white border-none text-xs font-bold rounded-2xl px-5 py-4 outline-none ring-1 ring-slate-200 focus:ring-2 focus:ring-orange-500 appearance-none cursor-pointer">
+                            <option value="es">Español (ES)</option>
+                            <option value="fr">Français (FR)</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2 text-left">
+                        <label class="text-[9px] font-black uppercase text-slate-400 ml-2">Currency</label>
+                        <select onchange="updateCurrency(this.value)" class="w-full bg-white border-none text-xs font-bold rounded-2xl px-5 py-4 outline-none ring-1 ring-slate-200 focus:ring-2 focus:ring-orange-500 appearance-none cursor-pointer">
+                            <option value="XAF">XAF (FCFA)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="MAD">MAD (DH)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="exitOnboarding()" class="w-full bg-black text-white py-5 rounded-[2rem] font-bold text-lg hover:bg-orange-600 transition-all shadow-xl shadow-orange-100 flex items-center justify-center gap-3 group">
+                    <span class="lang-text" data-es="Comenzar Exploración" data-fr="Commencer l'Exploration">Comenzar Exploración</span>
+                    <i data-lucide="sparkles" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper mt-5">
-        <div class="offcanvas__close">+</div>
-        <div class="offcanvas__logo">
-            <a href="./index.html">
-                <img class="shadow p-2 rounded-circle" src="https://e7.pngegg.com/pngimages/122/453/png-clipart-computer-icons-user-profile-avatar-female-profile-heroes-head-thumbnail.png" alt="">
-                <p class="text-justify">Juan Antonio</p>
-                <a class="btn btn-danger" href="">Editar</a>
-            </a>
-        </div>
-        <ul class="offcanvas__widget">
-            <li><span class="icon_search search-switch"></span></li>
-            <li><a href="#"><span class="icon_heart_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
-            <li><a href="#"><span class="icon_bag_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
-        </ul>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__right__auth btn btn-danger">
-            <a data-bs-toggle="modal" data-bs-target="#exampleModalLabellog" href="#">Login</a>
-            <a data-bs-toggle="modal" data-bs-target="#exampleModalLabellog" href="#">Register</a>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
-
-    <!-- Header Section Begin -->
-    <header class="header fixed-top">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-3 col-lg-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logotipo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-7">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Inico</a></li>
-                            <li><a href="#">Mifumu cosmetic</a></li>
-                            <li><a href="#">Categorias</a>
-                                <ul class="dropdown">
-                                    <li><a href="./product-details.html">Herramientas</a></li>
-                                    <li><a href="./product-details.html">Herramientas</a></li>
-                                    <li><a href="./product-details.html">Herramientas</a></li>
-                                    <li><a href="./product-details.html">Herramientas</a></li>
-
-                                </ul>
-                            </li>
-                            <li><a href="./shop.html">Tienda</a></li>
-
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contactos</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__right">
-                        <div class="header__right__auth btn btn-danger">
-                            <a data-bs-toggle="modal" data-bs-target="#exampleModalLabellog" href="#">Login</a>
-                            <a data-bs-toggle="modal" data-bs-target="#exampleModalLabellog" href="#">Register</a>
-                        </div>
-                        <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                        </ul>
-                    </div>
+    <!-- NAVEGACIÓN (Visible tras onboarding) -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <h1 class="text-2xl font-black italic text-orange-600 tracking-tighter">MIFUMU</h1>
+                <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <a href="#" class="hover:text-orange-600 transition-colors lang-text" data-es="Inicio" data-fr="Accueil">Inicio</a>
+                    <a href="#productos" class="hover:text-orange-600 transition-colors lang-text" data-es="Productos" data-fr="Produits">Productos</a>
                 </div>
             </div>
-            <div class="canvas__open">
-                <i class="fa fa-bars"></i>
+
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:block text-[10px] font-black text-slate-300 uppercase tracking-widest px-4 border-r border-slate-100">
+                    <span id="nav-currency-display">XAF</span> | <span id="nav-lang-display">ES</span>
+                </div>
+                <button class="relative p-2 text-slate-700">
+                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 text-white text-[8px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
             </div>
         </div>
-    </header>
-    <!-- Header Section End -->
+    </nav>
 
-    <!-- Categories Section Begin -->
-    <section class="categories">
-        <div class="container-fluid">
-            <div class="row" id="carousell-hero">
-                <div class="col-lg-6 col-md-12 p-0 hero-c" style="background-image: url(img/categories/category-1.jpg);">
-                    <div class="">
-                        <div class="banner__slider owl-carousel">
-                            <div class="banner__item">
-                                <div class="banner__text">
-                                    <span>The Chloe Collection</span>
-                                    <h1>The Project Jacket</h1>
-                                    <a href="#">Shop now</a>
-                                </div>
-                            </div>
-                            <div class="banner__item">
-                                <div class="banner__text">
-                                    <span>The Chloe Collection</span>
-                                    <h1>The Project Jacket</h1>
-                                    <a href="#">Shop now</a>
-                                </div>
-                            </div>
-                            <div class="banner__item">
-                                <div class="banner__text">
-                                    <span>The Chloe Collection</span>
-                                    <h1>The Project Jacket</h1>
-                                    <a href="#">Shop now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  <div class="categories__item categories__large__item set-bg" data-setbg="img/categories/category-1.jpg">
-                        <div class="categories__text">
-                            <h1>Women’s fashion</h1>
-                            <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore edolore magna aliquapendisse ultrices gravida.</p>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div> -->
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 hero-gradient overflow-hidden min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-[10px] font-black uppercase tracking-widest">
+                    Pure & Organic
                 </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-
-                            <div class="categories__item set-bg" data-setbg="https://media.glamour.mx/photos/61907219a6e030d6480f9639/master/w_1600%2Cc_limit/224500.jpg">
-
-                                <div id="overlay">
-                                    <div class="categories__text p-2">
-                                        <h4>Herramientas</h4>
-                                        <p>358 productos disponibles</p>
-                                        <a class="" href="#">Compra ahora</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-
-                            <div class="categories__item set-bg" data-setbg="https://arbuti.com/wp-content/uploads/2021/02/Haarcreme.jpg">
-                                <div id="overlay">
-                                    <div class="categories__text p-2">
-                                        <h4>Cremas de pelo</h4>
-                                        <p>273 productos disponibles</p>
-                                        <a class="" href="#">Compra ahora</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-
-                            <div class="categories__item set-bg" data-setbg="https://static1.abc.es/media/summum/2021/04/18/champus2-U17111161056VCG-660x372@abc.jpg">
-                                <div id="overlay">
-                                    <div class="categories__text p-2">
-                                        <h4 class="">Champu</h4>
-                                        <p>159 productos disponibles</p>
-                                        <a class=" rounded" href="#">Compra ahora</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-
-                            <div class="categories__item set-bg" data-setbg="https://m.media-amazon.com/images/I/616tRZ3O5SL._SY355_.jpg">
-                                <div id="overlay">
-                                    <div class="categories__text p-2">
-                                        <h4>Accessories</h4>
-                                        <p>792 items</p>
-                                        <a href="#">Shop now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter">
+                    <span class="lang-text" data-es="Revela tu" data-fr="Révélez votre">Revela tu</span><br>
+                    <span class="text-orange-600 lang-text" data-es="Esencia" data-fr="Essence">Esencia</span>.
+                </h2>
+                <p class="text-slate-500 text-lg max-w-md lang-text" data-es="Cosmética natural diseñada para realzar la belleza auténtica con ingredientes orgánicos de alta calidad." data-fr="Des cosmétiques naturels conçus pour sublimer la beauté authentique avec des ingrédients biologiques de haute qualité.">
+                    Cosmética natural diseñada para realzar la belleza auténtica con ingredientes orgánicos de alta calidad.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#productos" class="bg-black text-white px-10 py-5 rounded-2xl font-bold hover:bg-orange-600 transition-all shadow-xl shadow-slate-200 flex items-center gap-3 group">
+                        <span class="lang-text" data-es="Ver Catálogo" data-fr="Voir le Catalogue">Ver Catálogo</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -z-10 w-full h-full bg-orange-200/50 blur-[120px] rounded-full animate-pulse"></div>
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800" alt="Cosmetic Hero" class="rounded-[3.5rem] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-1000">
             </div>
         </div>
     </section>
-    <!-- Categories Section End -->
 
-    <!-- Product Section Begin -->
-    <section class="product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="section-title">
-                        <h4>Nuvos productos</h4>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8">
-                    <ul class="filter__controls">
-                        <li class="active" data-filter="*">Todos</li>
-                        <li data-filter=".women">Cremas</li>
-                        <li data-filter=".men">Champus</li>
-                        <li data-filter=".kid">Spray</li>
-                        <li data-filter=".accessories">Acesorios</li>
-                        <li data-filter=".cosmetic">Cosmetics</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row property__gallery">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
-                            <div class="label new">New</div>
-                            <ul class="product__hover">
-                                <li><a href="img/product/product-1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Buttons tweed blazer</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix men">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="https://media1.cestaclick.es/1873-thickbox_default/H-S-Champu-Anticaspa-Prevencion-Caida-270ml.jpg">
-                            <ul class="product__hover">
-                                <li><a href="https://media1.cestaclick.es/1873-thickbox_default/H-S-Champu-Anticaspa-Prevencion-Caida-270ml.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Flowy striped skirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 49.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix accessories">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="https://tahecosmetics.com/image/cache/data/products/2-blumin/olores/ajo-negro/ajo_negro_champu_1000ml_blumin-500x500.png">
-                            <div class="label stockout">out of stock</div>
-                            <ul class="product__hover">
-                                <li><a href="https://tahecosmetics.com/image/cache/data/products/2-blumin/olores/ajo-negro/ajo_negro_champu_1000ml_blumin-500x500.png" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Cotton T-Shirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix cosmetic">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
-                            <ul class="product__hover">
-                                <li><a href="img/product/product-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Slim striped pocket shirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix kid">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-5.jpg">
-                            <ul class="product__hover">
-                                <li><a href="img/product/product-5.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Fit micro corduroy shirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                    <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
-                            <div class="label sale">Sale</div>
-                            <ul class="product__hover">
-                                <li><a href="img/product/product-6.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Tropical Kimono</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
-                            <ul class="product__hover">
-                                <li><a href="img/product/product-7.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Contrasting sunglasses</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                    <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
-                            <div class="label">Sale</div>
-                            <ul class="product__hover">
-                                <li><a href="img/product/product-8.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Water resistant backpack</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                        </div>
-                    </div>
-                </div>
+    <!-- PRODUCTOS -->
+    <section id="productos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-3xl font-black tracking-tighter mb-12 lang-text" data-es="Best Sellers" data-fr="Meilleurs Ventes">Best Sellers</h3>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dinámico -->
             </div>
         </div>
     </section>
-    <!-- Product Section End -->
 
-    <!-- Banner Section Begin -->
-    <section class="banner set-bg" data-setbg="img/banner/banner-1.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 col-lg-8 m-auto">
-                    <div class="banner__slider owl-carousel">
-                        <div class="banner__item">
-                            <div class="banner__text">
-                                <span>The Chloe Collection</span>
-                                <h1>The Project Jacket</h1>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                        <div class="banner__item">
-                            <div class="banner__text">
-                                <span>The Chloe Collection</span>
-                                <h1>The Project Jacket</h1>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                        <div class="banner__item">
-                            <div class="banner__text">
-                                <span>The Chloe Collection</span>
-                                <h1>The Project Jacket</h1>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Banner Section End -->
+    <script>
+        const PRODUCTS = [
+            { id: 1, name: { es: 'Sérum Crecimiento', fr: 'Sérum Croissance' }, price: 15000, img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400', cat: { es: 'Cabello', fr: 'Cheveux' } },
+            { id: 2, name: { es: 'Mascarilla Pro', fr: 'Masque Pro' }, price: 22000, img: 'https://images.unsplash.com/photo-1556227702-d1e4e7b5c232?auto=format&fit=crop&q=80&w=400', cat: { es: 'Tratamiento', fr: 'Traitement' } },
+            { id: 3, name: { es: 'Aceite de Argán', fr: 'Huile d\'Argan' }, price: 18500, img: 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&q=80&w=400', cat: { es: 'Aceites', fr: 'Huiles' } },
+            { id: 4, name: { es: 'Champú Keratina', fr: 'Shampooing Keratine' }, price: 12000, img: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400', cat: { es: 'Limpieza', fr: 'Nettoyage' } }
+        ];
 
-    <!-- Trend Section Begin -->
-    <section class="trend spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="trend__content">
-                        <div class="section-title">
-                            <h4>Hot Trend</h4>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/ht-1.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Chain bucket bag</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/ht-2.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Pendant earrings</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/ht-3.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Cotton T-Shirt</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="trend__content">
-                        <div class="section-title">
-                            <h4>Best seller</h4>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/bs-1.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Cotton T-Shirt</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/bs-2.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Zip-pockets pebbled tote <br />briefcase</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/bs-3.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Round leather bag</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="trend__content">
-                        <div class="section-title">
-                            <h4>Feature</h4>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/f-1.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Bow wrap skirt</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/f-2.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Metallic earrings</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                        <div class="trend__item">
-                            <div class="trend__item__pic">
-                                <img src="img/trend/f-3.jpg" alt="">
-                            </div>
-                            <div class="trend__item__text">
-                                <h6>Flap cross-body bag</h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product__price">$ 59.0</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Trend Section End -->
+        const RATES = { XAF: 1, EUR: 0.0015, MAD: 0.016 };
+        const SYMBOLS = { XAF: 'FCFA', EUR: '€', MAD: 'DH' };
 
-    <!-- Discount Section Begin -->
-    <section class="discount">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 p-0">
-                    <div class="discount__pic">
-                        <img src="img/discount.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 p-0">
-                    <div class="discount__text">
-                        <div class="discount__text__title">
-                            <span>Discount</span>
-                            <h2>Summer 2019</h2>
-                            <h5><span>Sale</span> 50%</h5>
-                        </div>
-                        <div class="discount__countdown" id="countdown-time">
-                            <div class="countdown__item">
-                                <span>22</span>
-                                <p>Days</p>
-                            </div>
-                            <div class="countdown__item">
-                                <span>18</span>
-                                <p>Hour</p>
-                            </div>
-                            <div class="countdown__item">
-                                <span>46</span>
-                                <p>Min</p>
-                            </div>
-                            <div class="countdown__item">
-                                <span>05</span>
-                                <p>Sec</p>
-                            </div>
-                        </div>
-                        <a href="#">Shop now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Discount Section End -->
+        let currentLang = 'es';
+        let currentCurrency = 'XAF';
 
-    <!-- Services Section Begin -->
-    <section class="services spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="services__item">
-                        <i class="fa fa-car"></i>
-                        <h6>Free Shipping</h6>
-                        <p>For all oder over $99</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="services__item">
-                        <i class="fa fa-money"></i>
-                        <h6>Money Back Guarantee</h6>
-                        <p>If good have Problems</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="services__item">
-                        <i class="fa fa-support"></i>
-                        <h6>Online Support 24/7</h6>
-                        <p>Dedicated support</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="services__item">
-                        <i class="fa fa-headphones"></i>
-                        <h6>Payment Secure</h6>
-                        <p>100% secure payment</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Section End -->
+        function exitOnboarding() {
+            const ob = document.getElementById('onboarding');
+            ob.classList.add('onboarding-exit');
+            setTimeout(() => ob.style.display = 'none', 800);
+        }
 
-    <!-- Instagram Begin -->
-    <div class="instagram">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="img/instagram/insta-1.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="img/instagram/insta-2.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="img/instagram/insta-3.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="img/instagram/insta-4.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="img/instagram/insta-5.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="img/instagram/insta-6.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Instagram End -->
+        function updateCurrency(val) {
+            currentCurrency = val;
+            document.getElementById('nav-currency-display').innerText = val;
+            renderProducts();
+        }
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-7">
-                    <div class="footer__about">
-                        <div class="footer__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt cilisis.
-                        </p>
-                        <div class="footer__payment">
-                            <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-3.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-4.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-5.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-5">
-                    <div class="footer__widget">
-                        <h6>Quick links</h6>
-                        <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blogs</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4">
-                    <div class="footer__widget">
-                        <h6>Account</h6>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Orders Tracking</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Wishlist</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8 col-sm-8">
-                    <div class="footer__newslatter">
-                        <h6>NEWSLETTER</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Email">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <div class="footer__copyright__text">
-                        <p>Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-                    </div>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+        function changeLang(lang) {
+            currentLang = lang;
+            document.getElementById('nav-lang-display').innerText = lang.toUpperCase();
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.innerText = el.getAttribute(`data-${lang}`);
+            });
+            renderProducts();
+        }
 
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
+        function formatPrice(price) {
+            const converted = price * RATES[currentCurrency];
+            return `${converted.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${SYMBOLS[currentCurrency]}`;
+        }
 
-    <!-- Js Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/main.js"></script>
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = PRODUCTS.map(p => `
+                <div class="product-card group bg-slate-50/50 p-4 rounded-[2.5rem] transition-all hover:bg-white hover:shadow-2xl hover:shadow-orange-100">
+                    <div class="relative overflow-hidden rounded-[2rem] h-64 mb-6">
+                        <img src="${p.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <button class="cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-6 py-3 rounded-2xl font-black text-[10px] uppercase shadow-xl opacity-0 translate-y-4 transition-all hover:bg-orange-600 hover:text-white flex items-center gap-2">
+                            <i data-lucide="plus" class="w-3 h-3"></i>
+                            <span>${currentLang === 'es' ? 'Añadir' : 'Ajouter'}</span>
+                        </button>
+                    </div>
+                    <div class="px-2 pb-2">
+                        <span class="text-[9px] font-black uppercase text-orange-600 bg-orange-50 px-2 py-1 rounded-md">${p.cat[currentLang]}</span>
+                        <h4 class="font-bold text-lg mt-2 mb-1">${p.name[currentLang]}</h4>
+                        <p class="text-orange-600 font-black text-xl">${formatPrice(p.price)}</p>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        window.onload = () => {
+            renderProducts();
+            lucide.createIcons();
+        };
+    </script>
 </body>
-
-</html>
-
 </html>
