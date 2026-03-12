@@ -82,6 +82,51 @@
         </div>
     </div>
 
+    <!-- MODAL DE CHECKOUT (DATOS CLIENTE) -->
+    <div id="checkout-modal-overlay" onclick="toggleCheckoutModal()" class="fixed inset-0 bg-black/60 z-[500] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div onclick="event.stopPropagation()" class="bg-white w-full max-w-lg rounded-[2.5rem] p-8 md:p-10 shadow-2xl modal-animate modal-hidden flex flex-col gap-6 max-h-[90vh] overflow-y-auto">
+            <div class="text-center">
+                <h3 class="text-2xl font-black tracking-tighter lang-text" data-es="Datos de Entrega" data-fr="Détails de Livraison">Datos de Entrega</h3>
+                <p class="text-slate-400 text-xs mt-1 lang-text" data-es="Completa la información para procesar tu pedido" data-fr="Complétez les informations pour traiter votre commande">Completa la información para procesar tu pedido</p>
+            </div>
+            
+            <form id="checkout-form" class="space-y-4" onsubmit="processOrder(event)">
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase text-slate-400 ml-2">Nombre Completo</label>
+                    <input type="text" id="cust-name" required class="w-full bg-slate-50 border-none text-xs font-bold rounded-xl px-5 py-4 ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-500 outline-none">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-[9px] font-black uppercase text-slate-400 ml-2">País</label>
+                        <select id="cust-country" required class="w-full bg-slate-50 border-none text-xs font-bold rounded-xl px-5 py-4 ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-500 outline-none appearance-none">
+                            <option value="Guinea Ecuatorial">Guinea Ecuatorial</option>
+                            <option value="Marruecos">Marruecos</option>
+                            <option value="España">España</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[9px] font-black uppercase text-slate-400 ml-2">Contacto (Tel/Email)</label>
+                        <input type="text" id="cust-contact" required class="w-full bg-slate-50 border-none text-xs font-bold rounded-xl px-5 py-4 ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-500 outline-none">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase text-slate-400 ml-2">Nota adicional (Opcional)</label>
+                    <textarea id="cust-note" rows="2" class="w-full bg-slate-50 border-none text-xs font-bold rounded-xl px-5 py-4 ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-500 outline-none resize-none" placeholder="Ej: Entrega por la tarde..."></textarea>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-green-600 text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-green-700 transition-all shadow-xl active:scale-95">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        <span class="lang-text" data-es="Enviar Pedido por WhatsApp" data-fr="Envoyer la commande via WhatsApp">Enviar Pedido por WhatsApp</span>
+                    </button>
+                    <button type="button" onclick="toggleCheckoutModal()" class="w-full mt-2 py-3 text-[10px] font-black uppercase text-slate-400 hover:text-slate-600 tracking-widest lang-text" data-es="Cancelar" data-fr="Annuler">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- MODAL DE AJUSTES (IDIOMA/MONEDA) -->
     <div id="settings-modal-overlay" onclick="toggleSettings()" class="fixed inset-0 bg-black/40 z-[350] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
         <div onclick="event.stopPropagation()" class="bg-white w-full max-w-sm rounded-[2.5rem] p-8 shadow-2xl space-y-8">
@@ -193,9 +238,9 @@
                 <span class="lang-text" data-es="Total" data-fr="Total">Total</span>
                 <span id="cart-total">0 FCFA</span>
             </div>
-            <button onclick="checkoutWhatsApp()" class="w-full bg-green-600 text-white py-4 md:py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-green-700 transition-all shadow-lg active:scale-95">
-                <i data-lucide="message-circle" class="w-5 h-5"></i>
-                <span class="lang-text" data-es="Finalizar por WhatsApp" data-fr="Finaliser par WhatsApp">Finalizar por WhatsApp</span>
+            <button onclick="openCheckoutModal()" class="w-full bg-black text-white py-4 md:py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-orange-600 transition-all shadow-lg active:scale-95">
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                <span class="lang-text" data-es="Finalizar Pedido" data-fr="Finaliser la commande">Finalizar Pedido</span>
             </button>
         </div>
     </div>
@@ -352,6 +397,31 @@
             modal.classList.replace('modal-visible', 'modal-hidden');
             setTimeout(() => overlay.classList.add('hidden'), 300);
             document.body.style.overflow = 'auto';
+        }
+
+        // FUNCIONES DE CHECKOUT MODAL
+        function toggleCheckoutModal() {
+            const overlay = document.getElementById('checkout-modal-overlay');
+            const modal = document.getElementById('checkout-modal');
+            if (overlay.classList.contains('hidden')) {
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.add('opacity-100');
+                    modal.classList.replace('modal-hidden', 'modal-visible');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.classList.remove('opacity-100');
+                modal.classList.replace('modal-visible', 'modal-hidden');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+                document.body.style.overflow = 'auto';
+            }
+            lucide.createIcons();
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            toggleCheckoutModal();
         }
 
         function exitOnboarding() {
@@ -525,38 +595,52 @@
         }
 
         /**
-         * Checkout mejorado para WhatsApp.
-         * Después de abrir el enlace, vacía el carrito y lo cierra.
+         * Recopila datos del formulario y envía a WhatsApp
          */
-        function checkoutWhatsApp() {
+        function processOrder(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('cust-name').value;
+            const country = document.getElementById('cust-country').value;
+            const contact = document.getElementById('cust-contact').value;
+            const note = document.getElementById('cust-note').value;
+            
+            checkoutWhatsApp({ name, country, contact, note });
+        }
+
+        function checkoutWhatsApp(customerData) {
             if (cart.length === 0) return;
             const phone = "240222186398";
             
             let message = `✨ *MIFUMU COSMETIC - NUEVO PEDIDO* ✨\n\n`;
             
+            // Datos del Cliente
+            message += `👤 *CLIENTE:* ${customerData.name}\n`;
+            message += `📍 *PAÍS:* ${customerData.country}\n`;
+            message += `📞 *CONTACTO:* ${customerData.contact}\n`;
+            if (customerData.note) message += `📝 *NOTA:* ${customerData.note}\n`;
+            message += `\n🛒 *DETALLE DEL PEDIDO:*\n`;
+            
             cart.forEach(item => { 
                 message += `🛍️ *${item.name[currentLang]}*\n`;
                 message += `   Cantidad: ${item.qty}\n`;
-                message += `   Subtotal: ${formatPrice(item.price * item.qty)}\n`;
-                message += `   🖼️ Foto: ${item.img}\n\n`;
+                message += `   Subtotal: ${formatPrice(item.price * item.qty)}\n\n`;
             });
             
             const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
             message += `----------------------------\n`;
             message += `💰 *TOTAL A PAGAR: ${formatPrice(total)}*\n`;
             message += `----------------------------\n\n`;
-            message += `👋 Hola, me gustaría confirmar la disponibilidad de estos productos.`;
+            message += `👋 Hola, este es mi pedido. Por favor confirmad disponibilidad.`;
             
-            // Abrir WhatsApp en nueva pestaña
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
 
             // --- ACCIONES POST-PEDIDO ---
-            // 1. Vaciar el array del carrito
             cart = [];
-            // 2. Refrescar la interfaz del carrito
             renderCart();
-            // 3. Cerrar el sidebar
-            toggleCart();
+            toggleCheckoutModal(); // Cierra el modal de datos
+            toggleCart(); // Cierra el sidebar
+            document.getElementById('checkout-form').reset(); // Limpia el form
         }
 
         window.onload = () => { renderProducts(); lucide.createIcons(); };
