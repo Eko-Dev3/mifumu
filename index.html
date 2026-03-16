@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mifumu Cosmetic | Tienda Oficial</title>
+ 
+<title>Mifumu Cosmetics | Cuidado Capilar Natural y Crecimiento</title>
+<meta name="description" content="Descubre Mifumu Hair Care: Rituales naturales para el crecimiento, fuerza e hidratación de todo tipo de cabello. Envíos desde Marruecos a todo el mundo.">
+<meta name="keywords" content="cosmética natural, cuidado capilar, crecimiento del cabello, hidratación profunda, Mifumu, natural hair care, Morocco beauty">
+<meta name="author" content="EKODEV COMPANY">
+
+<!-- Open Graph / Facebook (Para que se vea bien cuando compartas el link) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tusitio.com">
+<meta property="og:title" content="Mifumu Cosmetics | Natural Hair Care Rituals">
+<meta property="og:description" content="Fortalece y haz crecer tu cabello con ingredientes naturales. Envíos internacionales.">
+<meta property="og:image" content="https://github.com">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Mifumu Cosmetics | Cuidado Capilar Natural">
+<meta property="twitter:description" content="Rituales para el crecimiento y fuerza de tu cabello. Worldwide shipping.">
+<meta property="twitter:image" content="https://github.com">
+
+<!-- SEO de Idioma (Importante si vendes fuera) -->
+<link rel="alternate" href="https://tusitio.comes" hreflang="es">
+<link rel="alternate" href="https://tusitio.comen" hreflang="en">
+<link rel="alternate" href="https://tusitio.comfr" hreflang="fr">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
@@ -158,10 +182,20 @@
     <!-- ONBOARDING OVERLAY -->
     <div id="onboarding" class="fixed inset-0 z-[250] bg-white flex flex-col items-center justify-center p-6 text-center">
         <div class="max-w-xl w-full space-y-12 px-4">
-            <div class="space-y-4">
-               <img src="https://github.com/Eko-Dev3/mifumu/blob/master/logo-blanco-mifumu.png" alt="Mifumu Logo" class="h-24 md:h-10 w-auto object-contain brightness-0">
-                <p class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px] lang-text" data-es="Bienvenido a la belleza natural" data-fr="Bienvenue à la beauté naturelle">Bienvenido a la belleza natural</p>
-            </div>
+            <div class="space-y-4 flex flex-col items-center">
+    <!-- H1 oculto visualmente pero legible para Google -->
+    <h1 class="sr-only">Mifumu Cosmetics - Cuidado Capilar Natural</h1>
+
+    <img src="https://github.com/Eko-Dev3/mifumu/blob/master/logo-blanco-mifumu.png" 
+         alt="Mifumu Cosmetics Logo - Especialistas en Crecimiento e Hidratación Capilar" 
+         class="h-24 md:h-10 w-auto object-contain brightness-0">
+
+    <h2 class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px] lang-text" 
+        data-es="Bienvenido a la belleza natural" 
+        data-fr="Bienvenue à la beauté naturelle">
+        Bienvenido a la belleza natural
+    </h2>
+</div>
 
             <div class="bg-slate-50 p-6 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 shadow-2xl space-y-8">
                 <div class="space-y-2">
@@ -246,33 +280,49 @@
     </div>
 
     <!-- HERO SECTION -->
-    <section class="min-h-screen flex items-center hero-gradient pt-16 md:pt-20">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div class="space-y-6 md:space-y-10 order-2 lg:order-1 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-[9px] font-black uppercase tracking-widest mx-auto lg:mx-0">
-                    <i data-lucide="leaf" class="w-3 h-3"></i>
-                    100% Organic & Vegan
-                </div>
-                <h2 class="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter">
-                    <span class="lang-text" data-es="Belleza" data-fr="Beauté">Belleza</span><br>
-                    <span class="text-orange-600 italic">Consciente</span>.
-                </h2>
-                <p class="text-slate-500 text-base md:text-xl max-w-md mx-auto lg:mx-0 leading-relaxed lang-text" data-es="Nuestros productos combinan la sabiduría ancestral africana con la ciencia moderna." data-fr="Nos produits allient la sagesse ancestrale africaine à la science moderne.">
-                    Nuestros productos combinan la sabiduría ancestral africana con la ciencia moderna.
-                </p>
-                <div class="flex justify-center lg:justify-start">
-                    <a href="#productos" class="bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-3xl font-bold hover:bg-orange-600 transition-all shadow-2xl flex items-center gap-3 group active:scale-95">
-                        <span class="lang-text" data-es="Comprar Ahora" data-fr="Acheter Maintenant">Comprar Ahora</span>
-                        <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
-                    </a>
-                </div>
+   <!-- HERO SECTION -->
+<section class="min-h-screen flex items-center hero-gradient pt-16 md:pt-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div class="space-y-6 md:space-y-10 order-2 lg:order-1 text-center lg:text-left">
+            
+            <!-- SEO: Usamos etiquetas semánticas para beneficios -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-[9px] font-black uppercase tracking-widest mx-auto lg:mx-0">
+                <i data-lucide="leaf" class="w-3 h-3"></i>
+                <span class="lang-text" data-es="100% Orgánico & Vegano" data-fr="100% Biologique & Végétalien">100% Organic & Vegan</span>
             </div>
-            <div class="relative order-1 lg:order-2 px-4 md:px-0">
-                <div class="absolute inset-0 bg-orange-200/30 blur-[60px] md:blur-[100px] rounded-full"></div>
-                <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=1000" alt="Mifumu Product" class="relative z-10 w-full rounded-[2.5rem] md:rounded-[4rem] shadow-2xl object-cover aspect-square lg:aspect-auto h-[350px] md:h-[500px] lg:h-[650px]">
+
+            <!-- SEO: Cambiamos H2 por H1 (o H2 si ya tienes un H1 arriba) con keywords de peso -->
+            <h1 class="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter">
+                <span class="lang-text" data-es="Cuidado Capilar" data-fr="Soin Capillaire">Cuidado Capilar</span><br>
+                <span class="text-orange-600 italic lang-text" data-es="Natural" data-fr="Naturel">Consciente</span>.
+            </h1>
+
+            <!-- SEO: Enriquecemos el párrafo con palabras de búsqueda (Growth, Crecimiento, Rituals) -->
+            <p class="text-slate-500 text-base md:text-xl max-w-md mx-auto lg:mx-0 leading-relaxed lang-text" 
+               data-es="Rituales de crecimiento e hidratación que combinan la sabiduría ancestral africana con ciencia moderna." 
+               data-fr="Des rituels de croissance et d'hydratation alliant sagesse ancestrale africaine et science moderne.">
+                Nuestros productos combinan la sabiduría ancestral africana con la ciencia moderna para el crecimiento y fuerza de tu cabello.
+            </p>
+
+            <div class="flex justify-center lg:justify-start">
+                <!-- SEO: El title en el enlace ayuda a la accesibilidad y relevancia -->
+                <a href="#productos" title="Ver catálogo de productos Mifumu" class="bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-3xl font-bold hover:bg-orange-600 transition-all shadow-2xl flex items-center gap-3 group active:scale-95">
+                    <span class="lang-text" data-es="Comprar Ahora" data-fr="Acheter Maintenant">Comprar Ahora</span>
+                    <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+                </a>
             </div>
         </div>
-    </section>
+
+        <div class="relative order-1 lg:order-2 px-4 md:px-0">
+            <div class="absolute inset-0 bg-orange-200/30 blur-[60px] md:blur-[100px] rounded-full"></div>
+            <!-- SEO: Alt de imagen descriptivo con keywords -->
+            <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=1000" 
+                 alt="Mifumu Cosmetics - Productos naturales para el crecimiento del cabello" 
+                 class="relative z-10 w-full rounded-[2.5rem] md:rounded-[4rem] shadow-2xl object-cover aspect-square lg:aspect-auto h-[350px] md:h-[500px] lg:h-[650px]">
+        </div>
+    </div>
+</section>
+
 
     <!-- PRODUCTOS Y FILTROS -->
     <section id="productos" class="py-20 md:py-32 bg-white">
